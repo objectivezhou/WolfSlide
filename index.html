@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>轮播图</title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+    
+    #wolf-box {
+      overflow: hidden;
+      position: relative;
+      width: 300px;
+      margin: 0 auto;
+    }
+    
+    .wolf-main {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      height: 180px;
+    }
+    
+    .wolf-main li {
+      -webkit-flex-shrink: 0;
+      -ms-flex: 0 0 auto;
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .wolf-main li img {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .wolf-index {
+      overflow: hidden;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      z-index: 10;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: -webkit-flex-end;
+      justify-content: flex-end;
+    }
+    
+    .wolf-index div {
+      overflow: hidden;
+      width: 5px;
+      height: 5px;
+      margin-right: 5px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+    }
+    
+    .wolf-index div.on {
+      background: red;
+    }
+
+  </style>
+  <script type="text/javascript" src="WolfSlide.js"></script>
+</head>
+
+<body>
+  <div id="wolf-box">
+    <ul class="wolf-main">
+      <li><img src="image/1.jpg"></li>
+      <li><img src="image/2.jpg"></li>
+      <li><img src="image/3.jpg"></li>
+      <li><img src="image/4.jpg"></li>
+      <li><img src="image/5.jpg"></li>
+    </ul>
+    <div class="wolf-index"></div>
+    <div class="wolf-prev"></div>
+    <div class="wolf-next"></div>
+  </div>
+  <script type="text/javascript">
+    document.addEventListener('touchstart', function(ev) {
+      ev.preventDefault();
+    }, false);
+
+    new WolfSlide('#wolf-box', {
+      
+    });
+  
+  </script>
+
+</body>
+
+</html>
